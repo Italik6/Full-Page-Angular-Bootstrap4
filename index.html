@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pl" ng-app='ContactApp'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Full-Page e-italik.com</title>
+    <meta name="description" content="italik">
+    <!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!--    Bootstrap 4-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/tether/dist/css/tether.min.css">
+    <link rel="stylesheet" href="bower_components/tether/dist/css/tether-theme-basic.min.css">
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--    Full page files, responsive nav, dataTables-->
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="bower_components/datatables/media/css/jquery.dataTables.min.css">
+    <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/scrolloverflow.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="js/responsive-nav.js"></script>
+    <script type="text/javascript" src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <!--    Owl carousel-->
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+    <script type="text/javascript" src="js/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <!--    My files-->
+    <link rel="stylesheet" href="bower_components/Font-Awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom.css"> </head>
+
+<body>
+    <div id="e-italik">
+        <div class="container-fluid">
+            <div class="row navbar-fixed-top" style="background-color:#fff">
+                <nav class="nav-collapse navbar-fixed-top" style="overflow: visible;">
+                    <div class="bang-class-div">
+                        <ul>
+                            <li id="menu1" class="nav-button bang-class" data-menuanchor="home" onclick="location.href='#home';"><img src="img/logo-italik.png" alt="Johnson" style="height:75px;"></li>
+                            <li id="menu2" class="nav-button bang-class" data-menuanchor="wez_udzial" onclick="location.href='#wez_udzial';">WEŹ UDZIAŁ</li>
+                            <li id="menu3" class="nav-button bang-class" data-menuanchor="nagrody" onclick="location.href='#nagrody';">NAGRODY</li>
+                            <li id="menu4" class="nav-button bang-class" data-menuanchor="zasady" onclick="location.href='#zasady';">ZASADY</li>
+                            <li id="menu5" class="nav-button bang-class" data-menuanchor="zwycięzcy" onclick="location.href='#zwycięzcy';">ZWYCIĘZCY</li>
+                            <li class="nav-button" onclick="e-italik.com')">PDF/DOC</li>
+                            <li id="menu6" class="nav-button bang-class" data-menuanchor="produkty" onclick="location.href='#produkty';">PRODUKTY</li>
+                            <li id="menu7" class="nav-button bang-class" data-menuanchor="kontakt" onclick="location.href='#kontakt';">KONTAKT</li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div id="fullpage">
+            <div class="section" id="section0" data-anchor="home" ng-controller="myCiacho">
+                <!--               Cookies section-->
+                <div class="container-fluid cookies" ng-show="!ifExists">
+                    <p>Ta strona używa plików cookies (tzw. ciasteczka) w celach funkcjonalnych oraz statystycznych. Dzięki ciasteczkom strona dopasowana jest do twoich potrzeb. Możesz korzystać ze strony wyrażając zgodę na używanie cookies zgodnie z aktualnymi ustawieniami przeglądarki albo zmienić ustawienia przeglądarki.
+                        <div>
+                            <button id="cookies" type="button" class="btn btn-default2 text-uppercase m-t-2" ng-click="saveCookie()">akceptuję</button>
+                        </div>
+                    </p>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="position:relative; z-index:1">
+                                 <img src="img/poczuj.png" alt="Codziennie do wygrania" id="packshots" class="img-fluid p-y-2" /></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="section" id="section1" data-anchor="wez_udzial">
+                <div class="container">
+                    <div class="inputs">
+                        <div class="row p-t-3">
+                            <div class="offset-lg-2 col-lg-8">
+                                <input type="e-mail" class="form-control italik-form-control2 input-validation-error" placeholder="ADRES E-MAIL">
+                                <p class="error-message m-b-1">Proszę podać poprawny E-mail.</p>
+                                <input type="e-mail" class="form-control m-b-1 italik-form-control2" placeholder="POWTÓRZ E-MAIL"> </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-lg-3">
+                                <input type="tel" class="form-control m-b-1 italik-form-control2" placeholder="TELEFON"> </div>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control m-b-1 italik-form-control2" placeholder="NR PARAGONU"> </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-lg-4">
+                                <input type="text" class="form-control m-b-1 italik-form-control2" placeholder="DATA SPRZEDAŻ"> </div>
+                            <div class="col-lg-4">
+                                <div class="btn-group my-dropdown">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle italik-form-control2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> NAZWA DANIA </button>
+                                    <div class="dropdown-menu">
+                                        <button class="dropdown-item" type="button">OBIAD1</button>
+                                        <button class="dropdown-item" type="button">OBIAD2</button>
+                                        <button class="dropdown-item" type="button">OBIAD3</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="inputs">
+                            <div class="offset-lg-2 col-lg-8">
+                                <div class="zgody">
+                                    <div class="p-t-1">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Lorem ipsum dolor sit amet. </span> </label>
+                                    </div>
+                                    <div class="p-t-1">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span> </label>
+                                    </div>
+                                    <div class="p-t-1">
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input chck1"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span> </label>
+                                    </div>
+                                    <div class="p-t-1">
+                                        <label class="custom-control custom-checkbox ">
+                                            <input type="checkbox" class="custom-control-input chck2"> <span class="custom-control-indicator"></span> <span class="custom-control-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span> </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row inputs p-b-1">
+                        <div class="col-lg-3 offset-md-2 col-md-8 offset-sm-1 col-sm-10 col-xs-12">
+                            <button class="btn btn-primary m-t-3" data-toggle="modal" data-target="#myModal7">MODAL</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 p-b-3">
+                            <p class="text-bottom">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section2" data-anchor="nagrody">
+                <div class="container">
+                    <div class="inputs">
+                        <div class="row">
+                            <div class="col-md-12 p-b-2">
+                                <h1 class="text-uppercase p-t-3">Lorem ipsum dolor sit</h1> <span class="subhead">ipsum dolor</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section3" data-anchor="zasady">
+<div class="container">
+                    <div class="inputs">
+                        <div class="row">
+                            <div class="col-md-12 p-b-2">
+                                <h1 class="text-uppercase p-t-3">Lorem ipsum dolor sit</h1> <span class="subhead">ipsum dolor</span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section4" data-anchor="zwyciezcy">
+                <div class="inputs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-uppercase p-t-3 p-b-1">lorem ipsum dolor sit amet</h3> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-bottom3 p-b-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-xl-1 col-xl-10">
+                                <table id="tabelaWyniki" class="table stripe hover responsive">
+                                    <thead>
+                                        <tr>
+                                            <th class="dt-head-center">BILL NO</th>
+                                            <th class="dt-head-center">DATE</th>
+                                            <th class="dt-head-center">PRICE</th>
+                                        </tr>
+                                    </thead>
+                                    <!--                                    Example data-->
+                                    <tbody>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                        <tr>
+                                            <td>356735478/09/21/2015</td>
+                                            <td>XX/XX/2015</td>
+                                            <td>PRICE</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h3 class="text-uppercase p-y-1">Find your item</h3> </div>
+                        </div>
+                        <div class="row">
+                            <div class="offset-lg-2 col-lg-4 col-md-6 search">
+                                <input type="text" class="form-control italik-form-control m-b-1" id="inputNrParagonu" placeholder="NO BILL"> </div>
+                            <div class=" col-md-6 col-lg-4 search">
+                                <input type="text" class="form-control italik-form-control" id="inputData" placeholder="DATE"> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" onclick="SearchTable();" class="wyslij"> <button class="btn btn-primary m-t-1">Search</button> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section5" data-anchor="produkty">
+                <div class="inputs">
+                    <div class="container">
+                        <div class="row products-wrapper p-t-2">
+                            <div class="col-xs-2 col-sm-1"> <i id="products-nav-left" class="fa fa-chevron-left fa-3x carousel-nav-left"></i> </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div style="min-height: 400px;">
+                                    <div id="products-carousel" class="owl-carousel"> </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-1"> <i id="products-nav-right" class="fa fa-chevron-right fa-3x carousel-nav-right"></i> </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3 class="text-uppercase p-y-2">CLICK HERE</h3> </div>
+                        </div>
+                        <div class="row brands-wrapper p-b-3">
+                            <div class="col-xs-2 col-sm-1"> <i class="fa fa-chevron-left fa-3x carousel-nav-left hidden-lg-up"></i> </div>
+                            <div class="col-xs-8 col-sm-10">
+                                <div id="brands-carousel" class="owl-carousel"> <img src="img/kat1.png" data-products-json="json/kat1.json" alt="kat1" class="img-fluid" /> <img src="img/kat2.png" data-products-json="json/kat2.json" alt="kat2" class="img-fluid" /> <img src="img/kat3.png" data-products-json="json/kat3.json" alt="kat3" class="img-fluid" /> </div>
+                            </div>
+                            <div class="col-xs-2 col-sm-1"><i class="fa fa-chevron-right fa-3x carousel-nav-right hidden-lg-up"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section6" data-anchor="kontakt" ng-controller="Contact">
+                <div class="inputs">
+                    <div class="container">
+                        <form id="contact" name="contact" novalidate>
+                            <div ng-show="isFormValid">
+                                <div class="row" ng-show="contact.$valid">
+                                    <div class="col-md-12"> <img src="img/kat1.png" alt="Wiadomość wysłana" class="p-t-1"> </div>
+                                </div>
+                            </div>
+                            <div ng-hide="isFormValid">
+                                <div class="row">
+                                    <div class="offset-xl-2 col-xl-8">
+                                        <div class="white-background">
+                                            <h2 class="p-a-1">CONTACT SECTION</h2><br/>
+                                            <p class="alert alert-danger error-message2" ng-show="resultMsg.length > 0"><strong>{{ resultMsg }}</strong></p>
+                                            <input id="NameAndSurname" ng-model="member.NameAndSurname" name="NameAndSurname" type="text" ng-class="(validationMsg.NameAndSurname != null)? 'invalid form-control mr-muscle-form-control2' : 'valid form-control mr-muscle-form-control2'" placeholder="Name and Surname">
+                                            <div class="error-message" ng-show="validationMsg.NameAndSurname != null"> 
+                                                 <span ng-repeat="n in validationMsg.NameAndSurname">
+                                                  {{n}}<br/>
+                                                 </span> 
+                                            </div>
+                                            <input id="EmailAddress" ng-model="member.EmailAddress" name="EmailAddress" type="text" ng-class="(validationMsg.EmailAddress != null)? 'invalid form-control mr-muscle-form-control2' : 'valid form-control mr-muscle-form-control2'" placeholder="Email address">
+                                            <div class="error-message" ng-show="validationMsg.EmailAddress != null"> 
+                                                 <span ng-repeat="n in validationMsg.EmailAddress">
+                                                  {{n}}<br/>
+                                                 </span> 
+                                             </div>
+                                            <input id="EmailAddressRepeat" ng-messages="contact.EmailAddressRepeat.$error" ng-model="member.EmailAddressRepeat" name="EmailAddressRepeat" type="text" ng-class="(validationMsg.EmailAddressRepeat != null)? 'invalid form-control mr-muscle-form-control2' : 'valid form-control mr-muscle-form-control2'" placeholder="Email address repeat">
+                                            <div class="error-message" ng-show="validationMsg.EmailAddressRepeat != null"> 
+                                                 <span ng-repeat="n in validationMsg.EmailAddressRepeat">
+                                                  {{n}}<br/>
+                                                 </span> 
+                                            </div>
+                                            <textarea name="MessageToSend" id="MessageToSend" ng-model="member.MessageToSend" ng-class="(validationMsg.MessageToSend != null)? 'invalid form-control mr-muscle-form-control2' : 'valid form-control mr-muscle-form-control2'" rows="4" type="text" placeholder="Message to send"></textarea>
+                                            <div class="error-message" ng-show="validationMsg.MessageToSend != null"> 
+                                                 <span ng-repeat="n in validationMsg.MessageToSend">
+                                                  {{n}}<br/>
+                                                 </span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 m-t-3">
+                                        <button class="btn btn-success" ng-disabled="isSubmitting" ng-click="update(member)">Send</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            Error 404-->
+<!--
+            <div class="section" id="section7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2><span class="error">Błąd 404</span> <br/><br/>
+                            Przykro nam, ale wygląda na to, że strona o&nbsp;podanym adresie nie istnieje.</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+       </div>
+        <div class="modal fade" id="myModal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
+            <div class="background2"> <img src="img/modal-background.png" alt="#" class=""> </div>
+            <div class="modal-dialog modal-content-italik" role="document">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true" id="close-modal">&times;</span> </button>
+                    <p class="modal-text"><b>Sed ut perspiciatis unde omnis iste natus error sit.
+</b>
+                        <br/> <span style="font-size:17px">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis. </span> <span class="small-text p-t-1">
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+                            </span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.modal -->
+    <!--    My script-->
+    <script type="text/javascript" src="js/my-script.js"></script>
+    <script type="text/javascript" src="js/angular-messages.min.js"></script>
+    <script type="text/javascript" src="js/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
+</html>
